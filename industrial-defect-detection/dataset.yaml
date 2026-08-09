@@ -1,0 +1,8 @@
+path: E:/pytorch-learning/dataset  # 数据集路径（用正斜杠或双反斜杠）
+
+train: images/train  # 训练集图片文件夹
+val: images/val      # 验证集图片文件夹
+
+names:
+  0: normal   # 正常
+  1: defect    # 缺陷
