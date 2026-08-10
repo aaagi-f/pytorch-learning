@@ -1,0 +1,45 @@
+import gradio as gr
+from ultralytics import YOLO
+from PIL import Image
+
+# ========== 修改1：模型路径改成相对路径 ==========
+model = YOLO('./best.pt')
+
+def detect_defect(image):
+    """
+    接收一张图片，返回带检测框的结果图
+    """
+    # 预测
+    results = model(image)
+    
+    # 获取带框的结果图
+    result_img = results[0].plot()
+    
+    # 提取文字信息
+    info = []
+    for box in results[0].boxes:
+        class_name = results[0].names[int(box.cls)]
+        conf = float(box.conf)
+        info.append(f"{class_name}: {conf:.2f}")
+    
+    # 如果没有检测到，显示"无缺陷"
+    if not info:
+        info = ["无缺陷"]
+    
+    return result_img, "\n".join(info)
+
+# ========== 修改2：examples注释掉 ==========
+iface = gr.Interface(
+    fn=detect_defect,
+    inputs=gr.Image(type="pil"),
+    outputs=[
+        gr.Image(label="检测结果"),
+        gr.Textbox(label="检测信息")
+    ],
+    title="工业缺陷检测系统",
+    description="上传螺丝图片，自动检测缺陷",
+    # examples=["dataset/images/val/defect_001.jpg"]  # 先注释掉
+)
+
+if __name__ == "__main__":
+    iface.launch()
