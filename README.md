@@ -76,4 +76,4 @@ Adam训练日志：
 - **已部署至魔搭创空间**：[在线体验链接](https://www.modelscope.cn/studios/AAAAgi/industrial-defect-detection)
 - 文件：`industrial-defect-detection/` 文件夹
 
-[点击查看项目2.1详细说明](./README2.1.md)
+[点击查看项目2.1详细说明](./industrial-defect-detection/README2.1.md)
