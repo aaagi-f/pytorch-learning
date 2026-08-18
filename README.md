@@ -58,9 +58,22 @@ Adam训练日志：
 - SGD第一轮训练loss还在2.1，Adam已降至0.76
 - 最终Adam比SGD高3.81个百分点
 
+---
+
 ## 项目2：工业缺陷检测系统（2026.8）
 - YOLOv8目标检测，mAP@0.5=89.6%
 - FastAPI推理接口 + Gradio可视化界面
 - 文件：`industrial-defect-detection/` 文件夹
 
 [点击查看项目2详细说明](./industrial-defect-detection/README.md)
+
+---
+
+## 项目2.1：工业缺陷检测系统（2026.8）
+
+- YOLOv8 目标检测，mAP@0.5=89.6%
+- FastAPI 推理接口 + Gradio 可视化界面
+- **已部署至魔搭创空间**：[在线体验链接](https://www.modelscope.cn/studios/AAAAgi/industrial-defect-detection)
+- 文件：`industrial-defect-detection/` 文件夹
+
+[点击查看项目2.1详细说明](./README2.1.md)
